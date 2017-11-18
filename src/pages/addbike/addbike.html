@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Bike</ion-title>
+ 	<!-- <ion-buttons end ><button (click)="search()"  class="item item-icon-left"><ion-icon md ="md-search"></ion-icon></button></ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="home">
+
+<form  [formGroup]="bikeForm" (ngSubmit)="addBike()">
+      <ion-item>
+        <ion-label>Bike Number</ion-label>
+        <ion-input type="text" formControlName="BikeNumber" [(ngModel)]="bike.bikeId" name="BikeNumber" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name" [(ngModel)]="bike.name" name="name" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" formControlName="email" [(ngModel)]="bike.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone</ion-label>
+        <ion-input type="text" color="dark"  formControlName="phone" [(ngModel)]="bike.phone" name="phoneNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bike Name</ion-label>
+        <ion-input type ="text" formControlName="modal" [(ngModel)]="bike.modal" name="modal"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label>Amount</ion-label>
+       <ion-input  type="text" color="dark" formControlName="amount" [(ngModel)]="bike.amount" name="amount"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item-sliding *ngFor="let item of bikeItems " >
+        <ion-item >
+          <ion-label>{{item.itemName}}</ion-label>
+          <ion-label>{{item.itemPrice}}</ion-label>
+         <!--  <ion-buttons  end ><button (click) ="editItem(item)">Edit</button></ion-buttons> -->
+         </ion-item> 
+          <ion-item-options side="right">
+            <button ion-button (click)="editItem(item)">Edit</button>
+            <button ion-button color="danger" (click)="delete(item)">Delete</button>
+          </ion-item-options>
+
+
+        </ion-item-sliding>      
+     </ion-list>
+       <button ion-button block large outline  color="dark"  [disabled]="!bikeForm.valid">Submit</button>
+
+</form>
+<button ion-button block outline  color="dark" (click)="addItem()">AddItem</button>
+</ion-content>

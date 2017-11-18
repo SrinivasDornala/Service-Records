@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> Bike Details</ion-title>
+ 	<!-- <ion-buttons end ><button (click)="search()"  class="item item-icon-left"><ion-icon md ="md-search"></ion-icon></button></ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="home">
+
+      <ion-item>
+        <ion-label>Bike Number</ion-label>
+        <ion-label type="text"  name="BikeNumber">{{bike.bikeId}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-label type="text" name="name">{{bike.name}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-label type="text"  name="email">{{bike.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone</ion-label>
+        <ion-label type="text" name="phoneNumber">{{bike.phone}}</ion-label>
+      </ion-item>
+      <ion-item>
+  		<ion-label>Date</ion-label>
+ 		 <ion-label displayFormat="MM/DD/YYYY" name ="date"> {{bike.date}}</ion-label>
+  		</ion-item>
+<!--       <ion-item>
+        <ion-label>Items</ion-label>
+        <ion-textarea [(ngModel)]="bike.phoneNumber" name="phoneNumber"></ion-textarea>
+      </ion-item> -->
+      <ion-item>
+        <ion-label>Amount</ion-label>
+       <ion-label  type="text" color="dark" name="amount">{{bike.amount}}</ion-label>
+      </ion-item>
+
+      <ion-card>
+       <ion-list *ngFor="let item of bike.items ">
+        <ion-item >
+          <ion-label>{{item.itemName}}</ion-label>
+          <ion-label>{{item.itemPrice}}</ion-label>
+         <!--  <ion-buttons  end ><button (click) ="editItem(item)">Edit</button></ion-buttons> -->
+         </ion-item>
+                 		</ion-list>  
+     </ion-card>
+
+<!-- <button ion-button round outline  color="dark" (click)="addItem()">AddItem</button> -->
+</ion-content>
+
