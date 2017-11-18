@@ -23,12 +23,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 
 export const firebaseconfig={
-apiKey: "AIzaSyD-W4I7E6mLs8KMJFyHZXUpQkUJB9rerl0",
-    authDomain: "bikeservicerecords.firebaseapp.com",
-    databaseURL: "https://bikeservicerecords.firebaseio.com",
-    projectId: "bikeservicerecords",
-    storageBucket: "",
-    messagingSenderId: "945555448792" 
+
 }
 
 @NgModule({
